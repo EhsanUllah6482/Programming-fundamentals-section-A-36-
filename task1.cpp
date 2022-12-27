@@ -1,33 +1,26 @@
 #include <iostream>
 using namespace std;
-
-void displaydetail(string s, int m, char a, float ag);
-
-main()
+void iseligible(int enteredage);
+int main()
 {
-	string name;
-	cout << "Enter your name ";
-	cin >> name;
-	int marks;
-	cout << "Enter your marks ";
-	cin >> marks;
-	char section;
-	cout << "Enter your section ";
-	cin >> section;
-	float aggregate;
-	cout << "Enter your arregate ";
-	cin >> aggregate;
-	displaydetail(name, marks, section, aggregate);
-	cout << endl
-		 << endl;
+    while (true)
+    {
+        int age;
+        cout << "enter your age";
+        cin >> age;
+        iseligible(age);
+    }
+    return 0;
 }
-void displaydetail(string s, int m, char a, float ag)
+void iseligible(int enteredage)
 {
-	cout << "your name is " << s;
-	cout << endl;
-	cout << "your marks are " << m;
-	cout << endl;
-	cout << "your section is " << a;
-	cout << endl;
-	cout << "your aggregate is " << ag;
+    if (enteredage >= 18)
+    {
+        cout << "you are eligible ";
+    }
+    if (enteredage < 18)
+    {
+        cout << "you are not eligible ";
+    }
+    cout << endl;
 }
