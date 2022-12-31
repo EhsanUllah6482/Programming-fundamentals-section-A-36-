@@ -1,26 +1,18 @@
 #include <iostream>
+#include<windows.h>
 using namespace std;
-void iseligible(int enteredage);
-int main()
+void gotoxy(int x,int y);
+main()
 {
-    while (true)
-    {
-        int age;
-        cout << "enter your age";
-        cin >> age;
-        iseligible(age);
-    }
-    return 0;
+system("cls");
+cout<<"test";
+gotoxy(10,5);
+cout<<"my name is ehsan ullah";
 }
-void iseligible(int enteredage)
-{
-    if (enteredage >= 18)
-    {
-        cout << "you are eligible ";
-    }
-    if (enteredage < 18)
-    {
-        cout << "you are not eligible ";
-    }
-    cout << endl;
+void gotoxy(int x,int y){
+
+COORD coordinates;
+coordinates.X=x;
+coordinates.Y=y;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
 }

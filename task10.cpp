@@ -1,25 +1,53 @@
-/*Task 10(CP):
-Write a program that takes 5 integers from the user and displays their sum on screen. But
-You can only use two variables*/
 #include <iostream>
 using namespace std;
-int main()
+void discount(string name,int price);
+main()
 {
-    int number1, number2;
-    cout << "enter number one ";
-    cin >> number1;
-    cout << "enter number two ";
-    cin >> number2;
-    number2 = number1 + number2;
-    cout << "enter number three ";
-    cin >> number1;
-    number2 = number1 + number2;
-    cout << "enter number four ";
-    cin >> number1;
-    number2 = number1 + number2;
-    cout << "enter number five ";
-    cin >> number1;
-    number2 = number1 + number2;
-    cout << "The sum of your entered numbers is " << number2;
-    return 0;
+while(true){
+string name;
+cout<<"enter the country name ";
+cin>>name;
+int price;
+cout<<"enter the price of the entered country";
+cin>>price;
+
+discount(name,price);}
+}
+void discount(string name,int price)
+{
+if(name=="pakistan")
+	{
+float pakdiscount=price*(5.0/100);
+float totalpakdiscount=price-pakdiscount;
+cout<<"the discount for pakistan="<<totalpakdiscount;
+
+	}
+if(name=="ireland")
+	{
+float irelanddiscount=price*(10.0/100.0);
+float totalirelanddiscount=price-irelanddiscount;
+cout<<"the discount for ireland="<<totalirelanddiscount;
+
+	}
+if(name=="india")
+	{
+float indiadiscount=price*(20.0/100.0);
+float totalindiadiscount=price-indiadiscount;
+cout<<"the discount for india="<<totalindiadiscount;
+
+	}
+if(name=="england")
+	{
+float englanddiscount=price*(30.0/100.0);
+float totalenglanddiscount=price-englanddiscount;
+cout<<"the discount for england="<<totalenglanddiscount;
+
+	}
+if(name=="canada")
+	{
+float canadadiscount=price*(45.0/100.0);
+float totalcanadadiscount=price-canadadiscount;
+cout<<"the discount for canada="<<totalcanadadiscount;
+
+	}
 }

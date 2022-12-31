@@ -1,26 +1,23 @@
 #include <iostream>
 using namespace std;
-int main()
+void isequal(int a, int b);
+main()
 {
-    float vegetable_price;
-    cout << "Enter vegetable price per kilogram ";
-    cin >> vegetable_price;
-    float fruit_price;
-    cout << "Enter fruit price per kilogram ";
-    cin >> fruit_price;
-    int vegetables_kg;
-    cout << "Enter total kilogram of vegetables ";
-    cin >> vegetables_kg;
-    int fruit_kg;
-    cout << "Enter total kilogram of fruit ";
-    cin >> fruit_kg;
-    float vegetables_cost;
-    vegetables_cost = vegetable_price * vegetables_kg;
-    float fruit_cost;
-    fruit_cost = fruit_price * fruit_kg;
-    float total;
-    total = (vegetables_cost + fruit_cost) / 1.94;
-    cout << total;
-    cout << "The total earning from the harvest is " << total;
-    return 0;
+int number1,number2;
+cout<<"enter number one";
+cin>>number1;
+cout<<"enter number two";
+cin>>number2;
+isequal(number1,number2);
+}
+void isequal(int a, int b)
+{
+if(a==b)
+	{
+cout<<"true";
+	}
+if(a!=b)
+	{
+cout<<"false";
+	}
 }

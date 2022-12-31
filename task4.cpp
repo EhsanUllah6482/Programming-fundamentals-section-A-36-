@@ -1,31 +1,56 @@
-#include <iostream>
+#include<iostream>
+#include <windows.h>
 using namespace std;
-main()
+void gotoxy(int ,int );
+void printmaze();
+void playermove(int x,int y);
+
+main(){
+
+system("cls");
+printmaze();
+int x=6;
+int y=6;
+while(true){
+playermove( x,y);
+if(x<20){
+x=x+1;
+	}
+if(x==20){
+gotoxy(x-1,y);
+cout<<" ";
+x=6;
+	}
+}
+
+}
+void playermove(int x,int y)
 {
-    string name;
-    cout << "Enter your name :_" << endl;
-    cin >> name;
-    int number1;
-    cout << "Enter marks of first subject :_ " << endl;
-    cin >> number1;
-    int number2;
-    cout << "Enter marks of second subject :_" << endl;
-    cin >> number2;
-    int number3;
-    cout << "Enter marks of third subject :_" << endl;
-    cin >> number3;
-    int number4;
-    cout << "Enter marks of fourth subject :_" << endl;
-    cin >> number4;
-    int number5;
-    cout << "Enter marks of fifth subject :_" << endl;
-    cin >> number5;
-    int add;
-    int multiply;
-    float division;
-    add = number1 + number2 + number3 + number4 + number5;
-    division = add / 500.0;
-    float percentage;
-    percentage = division * 100;
-    cout << "Your percentage for five subjects is " << percentage;
+gotoxy(x-1,y);
+cout<<" ";
+gotoxy(x,y);
+cout<<"P";
+Sleep(500);
+
+}
+
+void printmaze()
+{
+cout<<"*********************"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*********************"<<endl;
+}
+void gotoxy(int x,int y){
+
+COORD coordinates;
+coordinates.X=x;
+coordinates.Y=y;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
 }

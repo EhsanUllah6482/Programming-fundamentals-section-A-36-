@@ -1,39 +1,56 @@
-#include <iostream>
+#include<iostream>
+#include <windows.h>
 using namespace std;
-main()
+void gotoxy(int ,int );
+void printmaze();
+void playermove(int x,int y);
+
+main(){
+
+system("cls");
+printmaze();
+int x=6;
+int y=2;
+while(true){
+playermove( x,y);
+if(y<8){
+y=y+1;
+	}
+if(y==8){
+gotoxy(x,y-1);
+cout<<" ";
+y=7;
+	}
+}
+
+}
+void playermove(int x,int y)
 {
-string movie;
-cout<<"enter movie name "<<endl;
-cin>>movie;
-int adultPrice;
-cout<<"enter adult price "<<endl;
-cin>>adultPrice;
-int childprice;
-cout<<"enter child price "<<endl;
-cin>>childprice;
-int childsold;
-cout<<"enter child sold tickets "<<endl;
-cin>>childsold;
-int adultsold;
-cout<<"enter adult sold tickets "<<endl;
-cin>> adultsold;
-int childtotal,adulttotal;
-childtotal=childprice*childsold;
-adulttotal=adultPrice*adultsold;
-int total;
-total=childtotal+adulttotal;
-cout<<"total amount is "<<total<<endl;
-int percentage;
-cout<<"enter percentage to donate "<<endl;
-cin>>percentage;
+gotoxy(x-1,y);
+cout<<" ";
+gotoxy(x,y);
+cout<<"P";
+Sleep(1000);
 
-float store;
-store=(percentage/100.0)*total;
-cout<<"amount after percentage is "<<store;
-cout<<endl;
+}
 
+void printmaze()
+{
+cout<<"*********************"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*********************"<<endl;
+}
+void gotoxy(int x,int y){
 
-int answer;
-answer=total-store;
-cout<<"amount after donation is :_ "<<answer;
+COORD coordinates;
+coordinates.X=x;
+coordinates.Y=y;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
 }

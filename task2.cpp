@@ -1,19 +1,32 @@
-#include <iostream>
+#include<iostream>
+#include <windows.h>
 using namespace std;
-void addition(int a, int b);
-main()
-{
+void gotoxy(int ,int );
+void printmaze();
 
-    int number1, number2;
-    cout << "enter number one ";
-    cin >> number1;
-    cout << "enter number second ";
-    cin >> number2;
-    addition(number1, number2);
+main(){
+
+system("cls");
+printmaze();
 }
-void addition(int a, int b)
+
+void printmaze()
 {
-    int sum;
-    sum = a + b;
-    cout << "the sum is " << sum;
+cout<<"*********************"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*                   *"<<endl;
+cout<<"*********************"<<endl;
+}
+void gotoxy(int x,int y){
+
+COORD coordinates;
+coordinates.X=x;
+coordinates.Y=y;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
 }

@@ -1,11 +1,17 @@
-#include <iostream>
+#include<iostream>
+#include <windows.h>
 using namespace std;
+void gotoxy(int x,int y);
 main()
 {
-    int weight;
-    cout << "Enter the weight you want to lose:_" << endl;
-    cin >> weight;
-    float days;
-    days = weight * 15;
-    cout << "It will take you " << days << " days to lose " << weight << "kg";
+system("cls");
+gotoxy(50,15);
+cout<<"MY NAME IS EHSAN ULLAH";
+}
+void gotoxy(int x,int y){
+
+COORD coordinates;
+coordinates.X=x;
+coordinates.Y=y;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
 }
