@@ -1,32 +1,20 @@
 #include<iostream>
-#include <windows.h>
 using namespace std;
-void gotoxy(int ,int );
-void printmaze();
-
+float isGreater(int num1 , int num2 , int num3);
 main(){
-
-system("cls");
-printmaze();
+float greatest = isGreater(1 , 2 , 3);
+cout<<greatest;
 }
-
-void printmaze()
-{
-cout<<"*********************"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*********************"<<endl;
-}
-void gotoxy(int x,int y){
-
-COORD coordinates;
-coordinates.X=x;
-coordinates.Y=y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
-}
+float isGreater(int num1 , int num2 , int num3){
+    float greatest;
+    if(num1 > num2 && num1 > num3){
+        greatest = num1;
+    }
+    if(num2 > num1 && num2 > num3){
+        greatest = num3;
+    }
+    if(num3>num1 && num3>num2){
+        greatest = num3;
+    }
+    return greatest;
+} 

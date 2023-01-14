@@ -1,23 +1,30 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-void isequal(int a, int b);
-main()
-{
-int number1,number2;
-cout<<"enter number one";
-cin>>number1;
-cout<<"enter number two";
-cin>>number2;
-isequal(number1,number2);
+float totalincome(string screening , int rows , int columns);
+main(){
+    string screening;
+    cout<<"Enter type of screening : ";
+    cin>>screening;
+    int rows , columns;
+    cout<<"Enter number of rows : ";
+    cin>>rows;
+    cout<<"Enter number of columns : ";
+    cin>>columns;
+    float result = totalincome(screening , rows , columns);
+    cout<<"Result is : "<<result;
 }
-void isequal(int a, int b)
-{
-if(a==b)
-	{
-cout<<"true";
-	}
-if(a!=b)
-	{
-cout<<"false";
-	}
+float totalincome(string screening , int rows , int columns){
+    float result;
+    if(screening == "primiere"){
+        result = 12.00 * rows * columns;
+    }
+        if(screening == "normal"){
+        result = 7.50 * rows * columns;
+    }
+        if(screening == "discount"){
+        result = 5.00 * rows * columns;
+    }
+    return result ;
 }
+
+

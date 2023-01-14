@@ -1,18 +1,16 @@
-#include <iostream>
-#include<windows.h>
+#include<iostream>
 using namespace std;
-void gotoxy(int x,int y);
-main()
-{
-system("cls");
-cout<<"test";
-gotoxy(10,5);
-cout<<"my name is ehsan ullah";
-}
-void gotoxy(int x,int y){
+main(){
+    string name;
+    cout<<"enter name : ";
+    cin>>name;
+    int roll_no;
+    cout<<"Enter your roll no : ";
+    cin>>roll_no;
+    if(name=="Ali"){
+        if(roll_no == 501){
+            cout<<"conguratulations";
+        }
+    }
 
-COORD coordinates;
-coordinates.X=x;
-coordinates.Y=y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
 }

@@ -1,56 +1,36 @@
 #include<iostream>
-#include <windows.h>
 using namespace std;
-void gotoxy(int ,int );
-void printmaze();
-void playermove(int x,int y);
-
+char checkresult(int marks);
 main(){
-
-system("cls");
-printmaze();
-int x=6;
-int y=6;
-while(true){
-playermove( x,y);
-if(x<20){
-x=x+1;
-	}
-if(x==20){
-gotoxy(x-1,y);
-cout<<" ";
-x=6;
-	}
+    int marks;
+    cout<<"Enter marks";
+    cin>>marks;
+char result = checkresult(marks);
+cout<<"Result "<<result;
 }
-
-}
-void playermove(int x,int y)
-{
-gotoxy(x-1,y);
-cout<<" ";
-gotoxy(x,y);
-cout<<"P";
-Sleep(500);
-
-}
-
-void printmaze()
-{
-cout<<"*********************"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*********************"<<endl;
-}
-void gotoxy(int x,int y){
-
-COORD coordinates;
-coordinates.X=x;
-coordinates.Y=y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
+char checkresult(int marks){
+    char result;
+    if(marks>=85){
+        result = 'A';
+    }
+    else if(marks >= 81 &&  marks<=85){
+        result= 'B';
+    }
+    else if(marks >= 71 && marks<=80){
+        result = 'C';
+    }
+    else if(marks >= 61 && marks<=70){
+        result = 'D';
+    }
+    else if(marks >= 50 && marks<= 60){
+        result = 'E';
+    }
+    else if(marks<=50){
+        result = 'F';
+    }
+    else 
+    {
+        result = 0;
+    }
+    return result;
 }

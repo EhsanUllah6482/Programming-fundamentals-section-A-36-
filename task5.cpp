@@ -1,17 +1,35 @@
-#include<iostream>
-#include <windows.h>
+#include <iostream>
 using namespace std;
-void gotoxy(int x,int y);
+float ispayable(string day, string month, float amount);
 main()
 {
-system("cls");
-gotoxy(50,15);
-cout<<"MY NAME IS EHSAN ULLAH";
+    string day, month;
+    cout << "enter day : ";
+    cin >> day;
+    cout << "enter month : ";
+    cin >> month;
+    int amount;
+    cout << "enter amount : ";
+    cin >> amount;
+    float payable = ispayable(day, month, amount);
+    cout << "Result is : " << payable;
 }
-void gotoxy(int x,int y){
-
-COORD coordinates;
-coordinates.X=x;
-coordinates.Y=y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
+float ispayable(string day, string month, float amount)
+{
+    float payable = amount;
+    if (day == "sunday")
+    {
+        if (month == "october" || month == "march" || month == "august")
+        {
+            payable = amount - (amount * 10) / 100;
+        }
+    }
+    if (day == "monday")
+    {
+        if (month == "november" || month == "december")
+        {
+            payable = amount - (amount * 5) / 100;
+        }
+    }
+    return payable;
 }

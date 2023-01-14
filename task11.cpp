@@ -1,17 +1,25 @@
-#include<iostream>
+#include <iostream>
+#include <windows.h>
 using namespace std;
-main()
+int main()
 {
-int speed;
-cout<<"enter your speed";
-cin>>speed;
-if(speed>100)
-
-	{
-cout<<"you will be challaned";
-	}
-if(speed<=100)
-	{
-cout<<"your speed is good";
-	}
+    string are;
+    cout << "Are the class today : ";
+    cin >> are;
+    string friends;
+    cout << "Are your friends go today : ";
+    cin >> friends;
+    if (are == "yes")
+    {
+        if (friends == "yes")
+        {
+            cout << "You should go to the university ";
+        }
+        else{
+            cout<<"You should not go to the university ";
+        }
+    }
+    else{
+        cout<<"You should not go to the university ";
+    }
 }

@@ -1,45 +1,22 @@
 #include<iostream>
-#include <windows.h>
 using namespace std;
-void gotoxy(int ,int );
-void printmaze();
-void playermove(int x,int y);
-
+int isEven(int number);
 main(){
-
-system("cls");
-printmaze();
-int x=5;
-int y=6;
-playermove( x,y);
+    int number;
+    cout<<"enter number : ";
+    cin>>number;
+    int result = isEven(number);
+    cout<<"result : "<<result;
 }
-void playermove(int x,int y)
-{
-gotoxy(x-1,y);
-cout<<" ";
-gotoxy(x,y);
-cout<<"P";
-Sleep(500);
-
-}
-
-void printmaze()
-{
-cout<<"*********************"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*                   *"<<endl;
-cout<<"*********************"<<endl;
-}
-void gotoxy(int x,int y){
-
-COORD coordinates;
-coordinates.X=x;
-coordinates.Y=y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
+int isEven(int number){
+    int even = number % 2;
+    string result;
+    if(even == 0){
+        result = "even";
+    }
+    if(even!=0)
+    {
+        result = "odd";
+    }
+    return even;
 }
